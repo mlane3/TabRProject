@@ -3,7 +3,8 @@
 # History files
 .Rhistory
 .Rapp.history
-.zip
+*.zip
+*.Rhistory
 
 # Session Data files
 .RData

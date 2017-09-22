@@ -3548,98 +3548,86 @@
             <column datatype='string' name='[Category]' role='dimension' type='nominal' />
             <column datatype='date' name='[Order Date]' role='dimension' type='ordinal' />
             <column datatype='real' default-format='c&quot;$&quot;#,##0' name='[Sales]' role='measure' type='quantitative' />
+            <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
             <column-instance column='[Category]' derivation='None' name='[none:Category:nk]' pivot='key' type='nominal' />
+            <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
             <column-instance column='[Order Date]' derivation='Month-Trunc' name='[tmn:Order Date:ok]' pivot='key' type='ordinal' />
-            <column-instance column='[Calculation_123004617341419521]' derivation='User' name='[usr:Calculation_123004617341419521:qk:1]' pivot='key' type='quantitative'>
-              <table-calc ordering-type='Rows' />
-              <table-calc field='[Sample - Superstore].[Calculation_123004617340899328]' ordering-type='Rows' />
+            <column-instance column='[Calculation_123004617341419521]' derivation='User' name='[usr:Calculation_123004617341419521:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[Sample - Superstore].[tmn:Order Date:ok]' ordering-type='Field' />
+              <table-calc field='[Sample - Superstore].[Calculation_123004617340899328]' ordering-field='[Sample - Superstore].[tmn:Order Date:ok]' ordering-type='Field' />
             </column-instance>
-            <column-instance column='[Calculation_123004617343582213]' derivation='User' name='[usr:Calculation_123004617343582213:qk:2]' pivot='key' type='quantitative'>
-              <table-calc ordering-type='Rows' />
+            <column-instance column='[Calculation_123004617343582213]' derivation='User' name='[usr:Calculation_123004617343582213:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[Sample - Superstore].[tmn:Order Date:ok]' ordering-type='Field' />
               <table-calc field='[Sample - Superstore].[Calculation_123004617342562306]' ordering-field='[Sample - Superstore].[tmn:Order Date:ok]' ordering-type='Field' />
-              <table-calc field='[Sample - Superstore].[Calculation_123004617340899328]' ordering-type='Rows' />
-              <table-calc field='[Sample - Superstore].[Calculation_123004617342951427]' ordering-type='Rows' />
-              <table-calc field='[Sample - Superstore].[Calculation_123004617341419521]' ordering-type='Rows' />
+              <table-calc field='[Sample - Superstore].[Calculation_123004617342951427]' ordering-field='[Sample - Superstore].[tmn:Order Date:ok]' ordering-type='Field' />
+              <table-calc field='[Sample - Superstore].[Calculation_123004617340899328]' ordering-field='[Sample - Superstore].[tmn:Order Date:ok]' ordering-type='Field' />
+              <table-calc field='[Sample - Superstore].[Calculation_123004617341419521]' ordering-field='[Sample - Superstore].[tmn:Order Date:ok]' ordering-type='Field' />
             </column-instance>
-            <column-instance column='[Calculation_123004617344208903]' derivation='User' name='[usr:Calculation_123004617344208903:qk:5]' pivot='key' type='quantitative'>
-              <table-calc ordering-type='Rows' />
-              <table-calc field='[Sample - Superstore].[Calculation_123004617343582213]' ordering-type='Rows' />
+            <column-instance column='[Calculation_123004617344208903]' derivation='User' name='[usr:Calculation_123004617344208903:qk:10]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[Sample - Superstore].[tmn:Order Date:ok]' ordering-type='Field' />
+              <table-calc field='[Sample - Superstore].[Calculation_123004617343582213]' ordering-field='[Sample - Superstore].[tmn:Order Date:ok]' ordering-type='Field' />
               <table-calc field='[Sample - Superstore].[Calculation_123004617342562306]' level-break='[Sample - Superstore].[Category]' ordering-type='Field'>
                 <order field='[Sample - Superstore].[tmn:Order Date:ok]' />
                 <order field='[Sample - Superstore].[Category]' />
+                <order field='[Sample - Superstore].[State]' />
               </table-calc>
-              <table-calc field='[Sample - Superstore].[Calculation_123004617340899328]' ordering-type='Rows' />
-              <table-calc field='[Sample - Superstore].[Calculation_123004617342951427]' ordering-type='Rows' />
-              <table-calc field='[Sample - Superstore].[Calculation_123004617341419521]' ordering-type='Rows' />
+              <table-calc field='[Sample - Superstore].[Calculation_123004617342951427]' ordering-field='[Sample - Superstore].[tmn:Order Date:ok]' ordering-type='Field' />
+              <table-calc field='[Sample - Superstore].[Calculation_123004617340899328]' ordering-field='[Sample - Superstore].[tmn:Order Date:ok]' ordering-type='Field' />
+              <table-calc field='[Sample - Superstore].[Calculation_123004617341419521]' ordering-field='[Sample - Superstore].[tmn:Order Date:ok]' ordering-type='Field' />
             </column-instance>
-            <column-instance column='[Calculation_123004617345454088]' derivation='User' name='[usr:Calculation_123004617345454088:nk:1]' pivot='key' type='nominal'>
-              <table-calc ordering-type='Rows' />
-              <table-calc field='[Sample - Superstore].[Calculation_123004617344208903]' ordering-type='Rows' />
-              <table-calc field='[Sample - Superstore].[Calculation_123004617343582213]' ordering-type='Rows' />
-              <table-calc field='[Sample - Superstore].[Calculation_123004617342562306]' ordering-type='Rows' />
-              <table-calc field='[Sample - Superstore].[Calculation_123004617342951427]' ordering-type='Rows' />
-              <table-calc field='[Sample - Superstore].[Calculation_123004617340899328]' ordering-type='Rows' />
-              <table-calc field='[Sample - Superstore].[Calculation_123004617341419521]' ordering-type='Rows' />
+            <column-instance column='[Calculation_123004617345454088]' derivation='User' name='[usr:Calculation_123004617345454088:nk]' pivot='key' type='nominal'>
+              <table-calc ordering-field='[Sample - Superstore].[tmn:Order Date:ok]' ordering-type='Field' />
+              <table-calc field='[Sample - Superstore].[Calculation_123004617344208903]' ordering-field='[Sample - Superstore].[tmn:Order Date:ok]' ordering-type='Field' />
+              <table-calc field='[Sample - Superstore].[Calculation_123004617343582213]' ordering-field='[Sample - Superstore].[tmn:Order Date:ok]' ordering-type='Field' />
+              <table-calc field='[Sample - Superstore].[Calculation_123004617342562306]' ordering-field='[Sample - Superstore].[tmn:Order Date:ok]' ordering-type='Field' />
+              <table-calc field='[Sample - Superstore].[Calculation_123004617342951427]' ordering-field='[Sample - Superstore].[tmn:Order Date:ok]' ordering-type='Field' />
+              <table-calc field='[Sample - Superstore].[Calculation_123004617340899328]' ordering-field='[Sample - Superstore].[tmn:Order Date:ok]' ordering-type='Field' />
+              <table-calc field='[Sample - Superstore].[Calculation_123004617341419521]' ordering-field='[Sample - Superstore].[tmn:Order Date:ok]' ordering-type='Field' />
             </column-instance>
           </datasource-dependencies>
-          <filter class='quantitative' column='[Sample - Superstore].[usr:Calculation_123004617341419521:qk:1]' included-values='non-null' />
+          <filter class='quantitative' column='[Sample - Superstore].[usr:Calculation_123004617341419521:qk]' included-values='non-null' />
           <slices>
-            <column>[Sample - Superstore].[usr:Calculation_123004617341419521:qk:1]</column>
+            <column>[Sample - Superstore].[usr:Calculation_123004617341419521:qk]</column>
           </slices>
           <aggregation value='true' />
         </view>
         <style />
         <panes>
-          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
             <view>
               <breakdown value='auto' />
             </view>
-            <mark class='Automatic' />
+            <mark class='Bar' />
             <encodings>
-              <lod column='[Sample - Superstore].[none:Category:nk]' />
-              <tooltip column='[Sample - Superstore].[usr:Calculation_123004617345454088:nk:1]' />
+              <color column='[Sample - Superstore].[none:Category:nk]' />
+              <lod column='[Sample - Superstore].[usr:Calculation_123004617345454088:nk]' />
+              <lod column='[Sample - Superstore].[none:State:nk]' />
             </encodings>
-            <style>
-              <style-rule element='mark'>
-                <format attr='mark-labels-cull' value='true' />
-                <format attr='mark-labels-show' value='false' />
-              </style-rule>
-            </style>
           </pane>
-          <pane id='3' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[Sample - Superstore].[usr:Calculation_123004617343582213:qk:2]'>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[Sample - Superstore].[usr:Calculation_123004617343582213:qk]'>
             <view>
               <breakdown value='auto' />
             </view>
-            <mark class='Automatic' />
+            <mark class='Bar' />
             <encodings>
-              <lod column='[Sample - Superstore].[none:Category:nk]' />
-              <tooltip column='[Sample - Superstore].[usr:Calculation_123004617345454088:nk:1]' />
+              <color column='[Sample - Superstore].[none:Category:nk]' />
+              <lod column='[Sample - Superstore].[usr:Calculation_123004617345454088:nk]' />
+              <lod column='[Sample - Superstore].[none:State:nk]' />
             </encodings>
-            <style>
-              <style-rule element='mark'>
-                <format attr='mark-labels-cull' value='true' />
-                <format attr='mark-labels-show' value='false' />
-              </style-rule>
-            </style>
           </pane>
-          <pane id='4' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[Sample - Superstore].[usr:Calculation_123004617344208903:qk:5]'>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[Sample - Superstore].[usr:Calculation_123004617344208903:qk:10]'>
             <view>
               <breakdown value='auto' />
             </view>
-            <mark class='Automatic' />
+            <mark class='Bar' />
             <encodings>
-              <lod column='[Sample - Superstore].[none:Category:nk]' />
-              <tooltip column='[Sample - Superstore].[usr:Calculation_123004617345454088:nk:1]' />
+              <color column='[Sample - Superstore].[none:Category:nk]' />
+              <lod column='[Sample - Superstore].[usr:Calculation_123004617345454088:nk]' />
+              <lod column='[Sample - Superstore].[none:State:nk]' />
             </encodings>
-            <style>
-              <style-rule element='mark'>
-                <format attr='mark-labels-cull' value='true' />
-                <format attr='mark-labels-show' value='false' />
-              </style-rule>
-            </style>
           </pane>
         </panes>
-        <rows>([Sample - Superstore].[usr:Calculation_123004617343582213:qk:2] + [Sample - Superstore].[usr:Calculation_123004617344208903:qk:5])</rows>
+        <rows>([Sample - Superstore].[usr:Calculation_123004617343582213:qk] + [Sample - Superstore].[usr:Calculation_123004617344208903:qk:10])</rows>
         <cols>[Sample - Superstore].[tmn:Order Date:ok]</cols>
       </table>
     </worksheet>
@@ -3714,6 +3702,11 @@
           </strip>
           <strip size='2147483647'>
             <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[Sample - Superstore].[none:Category:nk]' type='color' />
           </strip>
         </edge>
       </cards>
